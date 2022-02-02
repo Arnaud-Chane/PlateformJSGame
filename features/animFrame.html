@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+
+var playerAnimStyle = document.createElement("style");
+playerAnimStyle.innerHTML = `
+#player {
+  position: absolute;
+  width: 30px;
+  height: 60px;
+  background-image: url("frames/knight_f_idle_anim_f0.png");
+  background-size: 30px 60px;
+  background-repeat: no-repeat;
+}
+
+@keyframes run {
+  0% {
+    background-image: url("frames/knight_f_run_anim_f0.png");
+    background-size: 30px 60px;
+    left: 0px;
+  }
+  15% {
+    background-image: url("frames/knight_f_run_anim_f1.png");
+    background-size: 30px 60px;
+    left: 15px;
+  }
+  30% {
+    background-image: url("frames/knight_f_run_anim_f2.png");
+    background-size: 30px 60px;
+    left: 30px;
+  }
+  45% {
+    background-image: url("frames/knight_f_run_anim_f3.png");
+    background-size: 30px 60px;
+    left: 45px;
+  }
+  55% {
+    background-image: url("frames/knight_f_run_anim_f0.png");
+    background-size: 30px 60px;
+    left: 60px;
+  }
+  70% {
+    background-image: url("frames/knight_f_run_anim_f1.png");
+    background-size: 30px 60px;
+    left: 75px;
+  }
+  85% {
+    background-image: url("frames/knight_f_run_anim_f2.png");
+    background-size: 30px 60px;
+    left: 90px;
+  }
+  100% {
+    background-image: url("frames/knight_f_run_anim_f3.png");
+    background-size: 30px 60px;
+    left: 100%;
+  }
+}
+`;
+document.head.appendChild(playerAnimStyle);
+
+
+var playerAnim = document.createElement("div");
+playerAnim.setAttribute("id", "player");
+playerAnim.setAttribute("onclick", "addAnim()");
+document.body.appendChild(playerAnim);
+
+function addAnim() {
+  playerAnim.style.animation = "run 0.9s infinite";
+}
+
+
+
+
+</script>
+</body>
+</html>
